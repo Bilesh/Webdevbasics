@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CSS Lists</title>
+  <style>
+    nav ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    nav ul li {
+      position: relative;
+      background-color: skyblue;
+      border: 2px solid black;
+      padding: 10px 10px 10px 40px; /* space for image on left */
+      margin-bottom: 10px;
+    }
+
+    nav ul li::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      width: 24px;
+      height: 24px;
+      background-image: url("https://forum.wscc.co.uk/forum/uploads/monthly_2023_02/DF9C7F25-39DB-4302-8EE7-767AC612EDFE.gif.67d2a82941df7fc88ad95c7274b9755f.gif");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li>Home</li>
+      <li>About</li>
+      <li>Contact</li>
+    </ul>
+  </nav>
+</body>
+</html>
