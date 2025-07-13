@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Overflow Example</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #eaf6f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .box {
+      width: 60vw;
+      height: 30vh;
+      border: 2px solid #3498db;
+      border-radius: 10px;
+      background-color: #ffffff;
+      padding: 20px;
+      overflow: auto;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .box::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    .box::-webkit-scrollbar-thumb {
+      background-color: #3498db;
+      border-radius: 5px;
+    }
+
+    .box::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    Love is a quiet force that weaves itself into the smallest corners of life—a gentle glance across a crowded room, the comfort of a familiar voice at the end of a hard day, or the silent understanding shared in a moment of stillness. It's not always grand or poetic; often, it's found in the mundane—making someone tea without being asked, listening without judgment, or simply showing up when it matters most. Love isn’t perfect, but it’s patient. It’s the courage to be vulnerable, the strength to forgive, and the joy of growing together even when the world outside feels uncertain. In love, we find not just someone to share moments with, but someone who helps us become the best version of ourselves.
+  </div>
+</body>
+</html>
