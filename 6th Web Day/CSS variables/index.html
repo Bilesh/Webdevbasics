@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Variables</title>
+    <style>
+      :root {
+        --color: rgb(194, 194, 244);
+        --seccolor: rgb(190, 199, 217);
+      }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        display: flex;
+      }
+      ul li {
+        list-style: none;
+        padding: 30px;
+      }
+      .nav {
+        background-color: var(--color);
+      }
+      .container {
+        background-color: var(--seccolor);
+      }
+      ul li:first-child {
+        --color: rgb(209, 64, 88);
+        background-color: var(--color);
+      }
+      ul li:nth-child(2) {
+        --color: rgb(64, 123, 209);
+        background-color: var(--color);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+      </ul>
+    </div>
+    <div class="container">
+      On a quiet hill where the wind whispered secrets through the trees, a lone
+      cottage stood surrounded by wildflowers and moss-covered stones. Every
+      morning, the sun filtered gently through the mist, casting golden rays on
+      the dew-soaked grass. Birds chirped cheerfully, unbothered by the pace of
+      the outside world. Inside the cottage, time seemed to slow down, replaced
+      by the soft crackle of a fireplace and the comforting scent of freshly
+      brewed tea. It was a place untouched by urgency — a gentle reminder that
+      peace often blooms in stillness.
+    </div>
+  </body>
+</html>
