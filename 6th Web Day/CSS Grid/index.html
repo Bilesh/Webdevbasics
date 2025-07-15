@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS Grid Showcase</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f0f0f0;
+        padding: 2rem;
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      section {
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        row-gap: 3rem;
+      }
+
+      .basic-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+      }
+      .basic-grid div {
+        background: #1e88e5;
+        color: #fff;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        text-align: center;
+        font-size: 1.25rem;
+      }
+
+      .area-grid {
+        display: grid;
+        grid-template-columns: 150px 1fr 150px;
+        grid-template-rows: 80px 200px 120px;
+        grid-template-areas:
+          "header header header"
+          "sidebar content ads"
+          "footer footer footer";
+        gap: 0.75rem;
+      }
+      .area-grid .header {
+        grid-area: header;
+      }
+      .area-grid .sidebar {
+        grid-area: sidebar;
+      }
+      .area-grid .content {
+        grid-area: content;
+      }
+      .area-grid .ads {
+        grid-area: ads;
+      }
+      .area-grid .footer {
+        grid-area: footer;
+      }
+      .area-grid div {
+        background: #43a047;
+        color: #fff;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        text-align: center;
+        font-size: 1.2rem;
+      }
+
+      /* Implicit rows + item spanning */
+      .implicit-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(120px, 1fr));
+        gap: 0.75rem;
+      }
+      .implicit-grid div {
+        background: #fb8c00;
+        color: #fff;
+        padding: 1.2rem;
+        border-radius: 0.5rem;
+        text-align: center;
+        font-size: 1.1rem;
+      }
+      .implicit-grid .span-col {
+        grid-column: span 2;
+      }
+      .implicit-grid .span-row {
+        grid-row: span 2;
+      }
+
+      .align-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 120px);
+        grid-template-rows: repeat(2, 120px);
+        justify-content: space-around;
+        align-content: space-around;
+        background: #ccc;
+        height: 400px;
+      }
+      .align-grid div {
+        background: #8e24aa;
+        color: #fff;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+      }
+
+      @media (max-width: 700px) {
+        .basic-grid {
+          grid-template-columns: 1fr;
+        }
+        .area-grid {
+          grid-template-columns: 1fr;
+          grid-template-areas:
+            "header"
+            "content"
+            "sidebar"
+            "ads"
+            "footer";
+        }
+        .implicit-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .align-grid {
+          grid-template-columns: repeat(2, 80px);
+          grid-template-rows: repeat(2, 80px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS Grid Showcase</h1>
+
+    <section>
+      <h2>Basic Explicit Grid</h2>
+      <div class="basic-grid">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+      </div>
+
+      <h2>Grid Template Areas</h2>
+      <div class="area-grid">
+        <div class="header">Header</div>
+        <div class="sidebar">Sidebar</div>
+        <div class="content">Main&nbsp;Content</div>
+        <div class="ads">Ads</div>
+        <div class="footer">Footer</div>
+      </div>
+
+      <h2>Implicit Grid &amp; Item Spanning</h2>
+      <div class="implicit-grid">
+        <div>1</div>
+        <div class="span-col">2&nbsp;(col‑span 2)</div>
+        <div>3</div>
+        <div class="span-row">4&nbsp;(row‑span 2)</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+      </div>
+
+      <h2>Alignment Demo</h2>
+      <div class="align-grid">
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+        <div>D</div>
+      </div>
+    </section>
+  </body>
+</html>
