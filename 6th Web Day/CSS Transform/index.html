@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS transform</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .box {
+      width: 150px;
+      height: 150px;
+      background-color: #3498db;
+      transition: transform 1s ease-in-out;
+    }
+
+    .box:hover {
+      transform: rotate(55deg) scale(2) translateY(-10px);
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+</body>
+</html>
