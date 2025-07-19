@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conic Gradient Box</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: #0e2136;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box{
+            background: #142d4a;
+      height: 200px;
+      aspect-ratio: 1 / 1;
+      border-radius: 10px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      font-weight: 700;
+      
+        }
+        @property --deg{
+            syntax: '<angle>';
+                inherits: true;
+                initial-value:0deg;
+        }
+        .box::before,
+        .box::after{
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background: conic-gradient(
+                from var(--deg) at center,
+                #00c3ff,
+                #4d0199,
+                #6300c6,
+                #00c3dd
+            );
+            border-radius:inherit;
+            z-index:-2;
+            padding: 2px;
+            animation: autoRotate 2s linear infinite;
+        }
+        .box::after{
+            filter: blur(10px);
+        }
+        @keyframes autoRotate{
+            to{
+                --deg: 360deg;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">Hello! This is a beautiful box....</div>
+</body>
+</html>
